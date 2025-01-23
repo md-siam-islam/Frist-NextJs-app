@@ -9,7 +9,7 @@ async function fetchBlogDetails(id) {
   }
   
   export default async function BlogDetailsPage({ params }) {
-    const { id } = params; // Dynamic route parameter
+    const { id } = params; 
     const blog = await fetchBlogDetails(id);
   
     return (
