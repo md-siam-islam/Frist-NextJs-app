@@ -10,15 +10,17 @@ export default async function Home () {
       <Navbar></Navbar>
       <div className="p-8">
         <h1 className="text-2xl font-bold mb-4">All Blog Posts</h1>
+        <div>
         <ul className="list-disc pl-5">
           {posts.slice(0, 10).map((post) => (
             <li key={post.id} className="mb-2">
-              <a href={`/blog/${post.id}`} className="text-blue-500 hover:underline">
+              <a href={`/blog/${post.id}`} className="text-[#FFA500] hover:underline">
                 {post.title}
               </a>
             </li>
           ))}
         </ul>
+        </div>
       </div>
     </div>
   );
