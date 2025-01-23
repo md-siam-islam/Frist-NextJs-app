@@ -30,7 +30,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          {user && user.email ? (
+          {user ? (
             <div className="flex items-center gap-4">
               <Link href="/profile" className="btn bg-[#FFA500] px-4 py-2 rounded-xl">
                 Profile

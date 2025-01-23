@@ -1,6 +1,7 @@
+
 import Navbar from "./Navbar/page";
 
-export default async  function Home() {
+export default async function Home () {
 
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await res.json();
