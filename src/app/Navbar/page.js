@@ -1,10 +1,11 @@
-// components/Navbar.js
 import Link from "next/link";
-import { LoginLink, RegisterLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
-import {getKindeServerSession} from "@kinde-oss/kinde-auth-nextjs/server";
+import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-const {getUser} = getKindeServerSession();
-const user = getUser();
+const { getUser } = getKindeServerSession();
+const user =await getUser();
+
 const Navbar = () => {
 
   return (
@@ -29,7 +30,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          {user ? (
+          {user && user.email ? (
             <div className="flex items-center gap-4">
               <Link href="/profile" className="btn bg-[#FFA500] px-4 py-2 rounded-xl">
                 Profile
