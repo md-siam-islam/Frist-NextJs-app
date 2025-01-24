@@ -4,12 +4,12 @@ import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 // const { getUser } = getKindeServerSession();
-const {isAuthenticated} = getKindeServerSession();
-const isUserAuthenticated = await isAuthenticated();
+
 // const user =await getUser();
 
-const Navbar = () => {
-
+const Navbar = async() => {
+  const {isAuthenticated} = getKindeServerSession();
+  const isUserAuthenticated = await isAuthenticated();
   return (
     <nav className="bg-blue-500 text-white p-4">
       <div className="flex items-center justify-between px-8">
