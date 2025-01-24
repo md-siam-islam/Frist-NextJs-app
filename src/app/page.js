@@ -27,7 +27,7 @@ export default async function Home() {
                 href={`/blog/${post.id}`}
                 className="inline-block bg-[#FFA500] text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors"
               >
-                Read More
+                Read More..
               </a>
             </div>
           ))}
