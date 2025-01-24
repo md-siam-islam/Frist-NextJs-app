@@ -3,8 +3,10 @@ import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-const { getUser } = getKindeServerSession();
-const user =await getUser();
+// const { getUser } = getKindeServerSession();
+const {isAuthenticated} = getKindeServerSession();
+const isUserAuthenticated = await isAuthenticated();
+// const user =await getUser();
 
 const Navbar = () => {
 
@@ -24,7 +26,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          {user ? (
+          {isUserAuthenticated ? (
             <div className="flex items-center gap-4">
               <Link href="/profile" className="btn bg-[#FFA500] px-4 py-2 rounded-xl">
                 Profile
